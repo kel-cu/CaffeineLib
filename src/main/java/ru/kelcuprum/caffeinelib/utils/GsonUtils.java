@@ -8,7 +8,7 @@ public class GsonUtils {
         return getStringInJSON(path, parse, null);
     }
     public static String getStringInJSON(String path, JsonObject parse, String defResp){
-        if(!jsonElementIsNull(path, parse)) return defResp;
+        if(jsonElementIsNull(path, parse)) return defResp;
         String[] keys = path.split("\\.");
         JsonObject jsonObject = parse;
         for(String key : keys){
@@ -25,7 +25,7 @@ public class GsonUtils {
         return getNumberInJSON(path, parse, null);
     }
     public static Number getNumberInJSON(String path, JsonObject parse, Number defResp){
-        if(!jsonElementIsNull(path, parse)) return defResp;
+        if(jsonElementIsNull(path, parse)) return defResp;
         String[] keys = path.split("\\.");
         JsonObject jsonObject = parse;
         for(String key : keys){
@@ -42,7 +42,7 @@ public class GsonUtils {
         return getJsonElementFromObject(path, parse, null);
     }
     public static JsonElement getJsonElementFromObject(String path, JsonObject parse, JsonElement defResp){
-        if(!jsonElementIsNull(path, parse)) return defResp;
+        if(jsonElementIsNull(path, parse)) return defResp;
         String[] keys = path.split("\\.");
         JsonObject jsonObject = parse;
         for(String key : keys){
@@ -56,7 +56,7 @@ public class GsonUtils {
     }
 
     public static boolean getBooleanInJSON(String path, JsonObject parse, boolean defResp){
-        if(!jsonElementIsNull(path, parse)) return defResp;
+        if(jsonElementIsNull(path, parse)) return defResp;
         String[] keys = path.split("\\.");
         JsonObject jsonObject = parse;
         for(String key : keys){
